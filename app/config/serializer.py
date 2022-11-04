@@ -31,12 +31,12 @@ class GeneroSerializer(serializers.ModelSerializer):
         model = GeneroModel
         fields = ['id', 'nombre', 'active', 'created_at', 'updated_at']
         
-class TipoDocumentoModelSerializer(serializers.ModelSerializer):
+class TipoDocumentoSerializer(serializers.ModelSerializer):
    class Meta:
         model = TipoDocumentoModel
         fields = ['id', 'nombre', 'active', 'created_at', 'updated_at']
         
-class TipoUsuarioModelSerializer(serializers.ModelSerializer):
+class TipoUsuarioSerializer(serializers.ModelSerializer):
    class Meta:
         model = TipoUsuarioModel
         fields = ['id', 'nombre', 'active', 'created_at', 'updated_at']

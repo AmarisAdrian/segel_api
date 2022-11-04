@@ -11,11 +11,13 @@ class DivipolModel(models.Model):
     active = models.BooleanField(db_column='active',blank=False, null=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now_add=True)
+    
     def __str__(self):
-        return self.departamento 
+        return str(self.departamento) 
+      
     def __str__(self):
-        return self.ciudad
-
+        return str(self.ciudad) 
+    
     class Meta:
         managed = True
         db_table = 'divipol'

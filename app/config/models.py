@@ -5,6 +5,10 @@ class DepartamentoModel(models.Model):
     active = models.BooleanField(db_column='active',blank=False, null=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now_add=True)
+    
+    def __str__(self):
+        return str(self.nombre) 
+    
     class Meta:
         managed = True
         db_table = 'departamento'
@@ -16,8 +20,11 @@ class CiudadModel(models.Model):
     departamento = models.ForeignKey(DepartamentoModel, models.DO_NOTHING, db_column='departamento')
     active = models.BooleanField(db_column='active',blank=False, null=False)
     created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now_add=True)
-
+    updated_at = models.DateTimeField(auto_now_add=True)   
+    
+    def __str__(self):
+        return str(self.nombre) 
+    
     class Meta:
         managed = True
         db_table = 'ciudad'
@@ -54,6 +61,10 @@ class EstadoUsuarioModel(models.Model):
     active = models.BooleanField(db_column='active',blank=False, null=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now_add=True)
+    
+    def __str__(self):
+        return str(self.nombre)   
+      
     class Meta:
         managed = True
         db_table = 'estado_usuario'
@@ -66,6 +77,10 @@ class GeneroModel(models.Model):
     active = models.BooleanField(db_column='active',blank=False, null=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now_add=True)
+    
+    def __str__(self):
+        return str(self.nombre)  
+    
     class Meta:
         managed = True
         db_table = 'genero'
@@ -77,6 +92,10 @@ class TipoDocumentoModel(models.Model):
     active = models.BooleanField(db_column='active',blank=False, null=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now_add=True)
+    
+    def __str__(self):
+        return str(self.nombre) 
+    
     class Meta:
         managed = True
         db_table = 'tipo_documento'
@@ -88,6 +107,9 @@ class TipoUsuarioModel(models.Model):
     active = models.BooleanField(db_column='active',blank=False, null=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now_add=True)
+    
+    def __str__(self):
+        return str(self.nombre) 
     class Meta:
         managed = True
         db_table = 'tipo_usuario'

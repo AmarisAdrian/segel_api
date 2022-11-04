@@ -18,7 +18,8 @@ class User(AbstractUser):
     direccion = models.CharField(max_length=70, db_column='direccion')
     departamento = models.ForeignKey(DepartamentoModel, models.DO_NOTHING, db_column='departamento')
     ciudad = models.ForeignKey(CiudadModel, models.DO_NOTHING, db_column='ciudad')
-    firma = models.FileField(upload_to='soporte/',blank=True, null=True)
+    firma = models.FileField(upload_to='firma/',blank=True, null=True)
+    
     def __str__(self):
         return self.tipo_documento
     def __str__(self):
